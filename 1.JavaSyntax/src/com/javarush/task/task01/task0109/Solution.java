@@ -6,6 +6,8 @@ package com.javarush.task.task01.task0109;
 
 public class Solution {
     public static void main(String[] args) {
-        System.out.println("Hello Aida");
+        int a = 3;
+        int b = 5;
+
     }
 }
