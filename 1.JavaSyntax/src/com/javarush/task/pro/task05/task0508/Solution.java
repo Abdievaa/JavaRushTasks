@@ -16,26 +16,24 @@ public class Solution {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         strings = new String[6];
         for (int i = 0; i < strings.length; i++) {
-            strings[i]= reader.readLine();
+            strings[i] = reader.readLine();
         }
 
-        for (int i = 0; i < strings.length-1; i++) {
-            if(strings[i].equals(strings[i+1])){
-                strings[i] = null;
-                strings[i+1]= null;
+        for (int i = 0; i < strings.length - 1; i++) {
+            String string = strings[i];
+            for (int j = i + 1; j < strings.length; j++) {
+                if (string == null) {
+                    break;
+                }
+                if (string.equals(strings[j])) {
+                    strings[i] = null;
+                    strings[j] = null;
+                }
             }
-
         }
-
-
-
-
-
 
         for (int i = 0; i < strings.length; i++) {
             System.out.print(strings[i] + ", ");
         }
-
-
     }
 }
