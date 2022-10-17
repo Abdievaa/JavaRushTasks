@@ -11,6 +11,6 @@ public class Solution {
     private static final String TRIANGLE_NOT_EXISTS = "треугольник не существует";
 
     public static void main(String[] args) {
-
+        //напишите тут ваш код
     }
 }

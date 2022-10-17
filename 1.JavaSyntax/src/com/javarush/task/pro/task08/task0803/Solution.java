@@ -14,11 +14,21 @@ public class Solution {
     }
 
     public static int min(int[] ints) {
-        //напишите тут ваш код
-        return 0;
+        int min = ints[0];
+        for (int i = 0; i < ints.length; i++) {
+            min = Math.min(min, ints[i]);
+        }
+
+        return min;
     }
 
     public static int[] getArrayOfTenElements() {
-        return new int[10];
+        Scanner scanner = new Scanner(System.in);
+        int[] arrays = new int[10];
+        for (int i = 0; i < arrays.length; i++) {
+            arrays[i] = scanner.nextInt();
+        }
+
+        return arrays;
     }
 }

@@ -12,13 +12,15 @@ public class Solution {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int number = scanner.nextInt();
-        multiArray = new int[number][];
-        for (int i = 0; i < number; i++) {
-            multiArray[i]= new int [scanner.nextInt()];
-        }
+        multiArray = new int [number][];
+        for (int i = 0; i < multiArray.length; i++) {
+            int num = scanner.nextInt();
+            multiArray [i] = new int[num];
 
 
 
         }
+
+
     }
-
+}
