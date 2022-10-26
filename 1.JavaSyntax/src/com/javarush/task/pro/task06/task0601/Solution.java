@@ -6,7 +6,6 @@ package com.javarush.task.pro.task06.task0601;
 
 public class Solution {
     public static void main(String[] args) {
-
         printHydrogenInfo();
         printJavaInfo();
     }
