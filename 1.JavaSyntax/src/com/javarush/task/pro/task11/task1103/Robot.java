@@ -7,13 +7,9 @@ package com.javarush.task.pro.task11.task1103;
 public class Robot {
 
     public static int robotCounter;
-
     public int id;
-
     public  String model;
-
     public  int productionYear;
-
     public static String vendor = "Javarush Co.";
 
     public Robot(String model, int productionYear) {
