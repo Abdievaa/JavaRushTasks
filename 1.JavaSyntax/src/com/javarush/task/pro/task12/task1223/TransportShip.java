@@ -8,7 +8,8 @@ public class TransportShip {
 
     public class OnBoardSystem {
         public Integer calculateJumpTime(Integer distance) {
-            //напишите тут ваш код
+
+
 
             return 0;
         }
