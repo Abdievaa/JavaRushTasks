@@ -22,11 +22,13 @@ public class UniversityGroup {
     }
 
     public void exclude(String excludedStudent) {
-        for (String student : students) {
+        List <String> copy = new ArrayList<>(students);
+        for (String student : copy) {
             if (student.equals(excludedStudent)) {
                 students.remove(student);
             }
         }
+        //students.removeIf(s -> s.equals(excludedStudent));
     }
 
     public static void main(String[] args) {
