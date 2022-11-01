@@ -9,6 +9,6 @@ public class Solution {
     public static RoboZombie[] roboZombies = Cosmoport.RoboZombieFactory.produce();
 
     public static void main(String[] args) {
-        UltraMetal.play();
+        Cosmoport.UltraMetal.play();
     }
 }
