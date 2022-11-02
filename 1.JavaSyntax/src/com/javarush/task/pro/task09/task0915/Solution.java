@@ -15,7 +15,7 @@ public class Solution {
     }
 
     public static String[] getTokens(String query, String delimiter) {
-        //напишите тут ваш код
+
         return null;
     }
 }

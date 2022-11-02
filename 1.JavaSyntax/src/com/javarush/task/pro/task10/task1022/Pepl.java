@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 public class Pepl {
 
-    public static Battery[] batteryWarehouse = new Battery[999];
+    public static Battery[] batteryWarehouse = Battery.getBatteries();
 
     public static void main(String[] args) {
         Robot[] robots = new Robot[]{new Robot(), new Robot(), new Robot(), new Robot(), new Robot(), new Robot(), new Robot()};

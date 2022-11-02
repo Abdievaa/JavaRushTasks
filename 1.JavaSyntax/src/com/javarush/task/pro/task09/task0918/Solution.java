@@ -13,12 +13,17 @@ public class Solution {
     }
 
     public static StringBuilder addTo(String string, String[] strings) {
-        //напишите тут ваш код
-        return null;
+        StringBuilder builder = new StringBuilder(string);
+        for (int i = 0; i < strings.length; i++) {
+            builder.append(strings[i]);
+        }
+        return builder;
     }
 
     public static StringBuilder replace(String string, String str, int start, int end) {
-        //напишите тут ваш код
-        return null;
+       StringBuilder builder = new StringBuilder(string);
+        StringBuilder replace = builder.replace(start, end, str);
+        return replace;
+
     }
 }

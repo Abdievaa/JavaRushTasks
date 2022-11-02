@@ -15,7 +15,7 @@ public class Solution {
     }
 
     public static int countDigits(String string) {
-        return 0;
+       return 0;
     }
 
     public static int countLetters(String string) {
