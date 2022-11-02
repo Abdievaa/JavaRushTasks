@@ -9,6 +9,7 @@ public class Cosmoport {
         private static RoboZombie[] roboZombies = RoboZombieFactory.produce();
     }
 
+
     public static class RoboZombieFactory {
         public static RoboZombie[] produce() {
             RoboZombie[] army = new RoboZombie[new Random().nextInt(100)];
@@ -17,6 +18,21 @@ public class Cosmoport {
             }
 
             return army;
+        }
+    }
+
+    public static class UltraMetal {
+        public static void play() {
+            for (RoboZombie roboZombie : Solution.roboZombies) {
+                roboZombie.uninstallBugs();
+            }
+            for (RoboZombie roboZombie : roboZombies){
+                roboZombie.uninstallBugs();
+            }
+            for (RoboZombie roboZombie : Werehouse.roboZombies){
+                roboZombie.uninstallBugs();
+            }
+
         }
     }
 }
