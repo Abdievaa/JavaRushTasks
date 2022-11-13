@@ -17,8 +17,6 @@ public class Solution {
     }
 
     public static int changeBit(int number, int bit, boolean activate) {
-        //напишите тут ваш код
-
-        return 0;
+        return activate ? number | bit : number & (~bit);
     }
 }

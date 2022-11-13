@@ -88,4 +88,4 @@ public class Game2048 extends Game {
         drawScene();
     }
 }
-//--module-path "/Users/aliiaabdyeva/Documents/Mega/JavaRushTasks/lib/javafx-sdk-17.0.2/lib" --add-modules javafx.controls,javafx.fxml
+//--module-path "/Users/aliiaabdyeva/Documents/Mega/JavaRushTasks/lib/javafx-sdk-17.0.2/bin" --add-modules javafx.controls,javafx.fxml

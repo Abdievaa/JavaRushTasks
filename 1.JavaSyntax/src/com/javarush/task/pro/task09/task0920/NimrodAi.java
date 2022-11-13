@@ -17,7 +17,7 @@ public class NimrodAi {
     public static String[] medRoom = {"bed", "bed", "bed", "bed", "SCAN-MO-TRON-2000", "liquid analyser"};
     public static String[] armoury = {"cannon launcher", "chair"};
     public static String[] securityRoom = {"rack", "rack", "table"};
-    public static String[] reactor = {};
+    public static String[] reactor = {"reactor"};
     public static String[] telecom = {"computer", "computer", "computer", "table", "chair"};
     public static String[] warehouse = {
             "container", "container", "container",
@@ -41,7 +41,10 @@ public class NimrodAi {
         String[] scanResult = RoomScanner.scanRoom(roomName);
         System.out.printf("В %s обнаружено: %s\n", roomName, Arrays.toString(scanResult));
 
-        //напишите тут ваш код
+      if(scanResult.length>room.length){
+          return true;
+      }
+
 
         return false;
     }
@@ -52,8 +55,21 @@ public class NimrodAi {
     }
 
     public static String[] getRoomByName(String roomName) {
-        //напишите тут ваш код
+       switch (roomName){
+           case "diningRoom":return diningRoom;
+           case "o2":return o2;
+           case "medRoom": return medRoom;
+           case "armoury": return armoury;
+           case "securityRoom": return securityRoom;
+           case "reactor": return reactor;
+           case "telecom": return telecom;
+           case " warehouse": return  warehouse;
+           case "controlRoom": return controlRoom;
+           case "powerRoom": return powerRoom;
+           default: return null;
+           
+       }
 
-        return null;
+       
     }
 }

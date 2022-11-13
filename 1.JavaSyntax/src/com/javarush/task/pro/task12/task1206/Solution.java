@@ -15,16 +15,36 @@ public class Solution {
     }
 
     public static int countDigits(String string) {
-       return 0;
+      int countDigits = 0;
+        for (int i = 0; i < string.length(); i++) {
+            if(Character.isDigit(string.charAt(i))){
+                countDigits++;
+            }
+
+        }
+        return countDigits;
     }
 
     public static int countLetters(String string) {
-        //напишите тут ваш код
-        return 0;
+        int countLetters = 0;
+        for (int i = 0; i < string.length(); i++) {
+            if(Character.isLetter(string.charAt(i))){
+                countLetters++;
+            }
+
+        }
+        return countLetters;
     }
 
     public static int countSpaces(String string) {
-        //напишите тут ваш код
-        return 0;
+        int countSpaces = 0;
+        for (int i = 0; i < string.length(); i++) {
+            if(Character.isSpaceChar(string.charAt(i))){
+                countSpaces++;
+            }
+
+        }
+        return countSpaces;
+
     }
 }
