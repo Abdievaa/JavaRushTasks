@@ -11,10 +11,6 @@ public class Solution {
     }
 
     public static int getPowerOfTwo(int power) {
-        int result = 2;
-        for(int i = 0; i < power - 1; i++) {
-            result *= 2;
-        }
-        return result;
+        return 2 << power - 1;
     }
 }
