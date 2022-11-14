@@ -28,23 +28,42 @@ public class Solution {
     }
 
     static void addIce(Map<String, Integer> ingredients) {
-        ingredients.put("ice cubes", 7);
+        try {
+            ingredients.put("ice cubes", 7);
+
+        }catch (Exception e){
+            printBugMethodName(Thread.currentThread().getStackTrace());
+        }
     }
 
     static void addVodka(Map<String, Integer> ingredients) {
-        ingredients.put("vodka", 50);
+        try {
+            ingredients.put("vodka", 50);
+        }catch (Exception e){
+            printBugMethodName(Thread.currentThread().getStackTrace());
+        }
     }
 
     static void addJuice(Map<String, Integer> ingredients) {
-        ingredients.put(null, 100);
+        try {
+
+            ingredients.put(null, 100);
+        }catch (Exception e){
+            printBugMethodName(Thread.currentThread().getStackTrace());
+        }
     }
 
     static void addOrange(Map<String, Integer> ingredients) {
-        ingredients.put("orange slice", 1);
+        try {
+            ingredients.put("orange slice", 1);
+        }catch (Exception e){
+           printBugMethodName(Thread.currentThread().getStackTrace());
+        }
     }
 
     public static void printBugMethodName(StackTraceElement[] stackTraceElements) {
-        StackTraceElement stackTraceElement = stackTraceElements[1];
+        StackTraceElement  stackTraceElement = stackTraceElements[1];
         System.out.println(stackTraceElement.getMethodName());
+
+       }
     }
-}
