@@ -27,9 +27,17 @@ public class NimrodAi {
     public static String[] powerRoom = {"power lamp", "power lamp", "power lamp", "power lamp", "power lamp", "power lamp", "power lamp"};
 
     public static void main(String[] args) {
-        //напишите тут ваш код
 
-        checkPirates("securityRoom");
+
+       String [] arrays = {"diningRoom","o2","medRoom","armoury","securityRoom","reactor","telecom","warehouse","controlRoom","powerRoom"};
+        for (int i = 0; i < arrays.length; i++) {
+            if(checkPirates(arrays[i])){
+                openFloodgates(arrays[i]);
+            }
+
+        }
+
+
     }
 
     public static boolean checkPirates(String roomName) {
@@ -41,11 +49,16 @@ public class NimrodAi {
         String[] scanResult = RoomScanner.scanRoom(roomName);
         System.out.printf("В %s обнаружено: %s\n", roomName, Arrays.toString(scanResult));
 
-      if(scanResult.length>room.length){
-          return true;
-      }
+        if (scanResult.length > room.length) {
+            return true;
+        }
+        Arrays.sort(room);
+        for (String item : scanResult){
+           if( Arrays.binarySearch(room,item)< 0){
+               return true;
+           }
 
-
+        }
         return false;
     }
 
@@ -55,21 +68,32 @@ public class NimrodAi {
     }
 
     public static String[] getRoomByName(String roomName) {
-       switch (roomName){
-           case "diningRoom":return diningRoom;
-           case "o2":return o2;
-           case "medRoom": return medRoom;
-           case "armoury": return armoury;
-           case "securityRoom": return securityRoom;
-           case "reactor": return reactor;
-           case "telecom": return telecom;
-           case " warehouse": return  warehouse;
-           case "controlRoom": return controlRoom;
-           case "powerRoom": return powerRoom;
-           default: return null;
-           
-       }
+        switch (roomName) {
+            case "diningRoom":
+                return diningRoom;
+            case "o2":
+                return o2;
+            case "medRoom":
+                return medRoom;
+            case "armoury":
+                return armoury;
+            case "securityRoom":
+                return securityRoom;
+            case "reactor":
+                return reactor;
+            case "telecom":
+                return telecom;
+            case "warehouse":
+                return warehouse;
+            case "controlRoom":
+                return controlRoom;
+            case "powerRoom":
+                return powerRoom;
+            default:
+                return null;
 
-       
+        }
+
+
     }
 }

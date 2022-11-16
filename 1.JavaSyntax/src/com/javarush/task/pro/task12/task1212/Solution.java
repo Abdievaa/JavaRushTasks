@@ -6,6 +6,7 @@ public class Solution {
         CustomStringArrayList arrayList = new CustomStringArrayList();
         for(int i = 0; i < 25; i++) {
             arrayList.add("count" + i);
+
         }
     }
 }

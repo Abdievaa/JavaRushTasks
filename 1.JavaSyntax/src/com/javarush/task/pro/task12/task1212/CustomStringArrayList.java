@@ -4,6 +4,8 @@ package com.javarush.task.pro.task12.task1212;
 Создаем свой список
 */
 
+import java.util.Arrays;
+
 public class CustomStringArrayList {
 
     private int size;
@@ -25,7 +27,16 @@ public class CustomStringArrayList {
     }
 
     private void grow() {
-        //напишите тут ваш код
+        capacity = (int)(capacity * 1.5);
+        String[] newElement = new String[capacity];
+        for (int i = 0; i < elements.length; i++) {
+            newElement[i] = elements[i];
+
+
+
+        }
+        elements = newElement;
+
     }
 
 }
