@@ -12,6 +12,10 @@ public class Solution {
     }
 
     public static Month getNextMonth(Month month) {
-       return null;
+        return null;
+
+
+
     }
+
 }
