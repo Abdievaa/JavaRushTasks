@@ -18,15 +18,28 @@ public class Solution {
     }
 
     public static void changeNegativeNumbers() {
-        //напишите тут ваш код
+        for (int i = 0; i < ratingsList.size(); i++) {
+            int num = ratingsList.get(i);
+            if (num < 0) {
+                ratingsList.set(i, num * (-1));
+            }
+
+        }
     }
 
     public static void changeZerosToMaximumNumber() {
-        //напишите тут ваш код
+        for (int i = 0; i < ratingsList.size(); i++) {
+            if(ratingsList.get(i) == 0){
+               int max = Collections.max(ratingsList);
+               ratingsList.set(i,max);
+            }
+
+        }
     }
 
     public static void reverseList() {
-        //напишите тут ваш код
+       Collections.sort(ratingsList);
+       Collections.reverse(ratingsList);
     }
 
     public static void improveRatings() {
