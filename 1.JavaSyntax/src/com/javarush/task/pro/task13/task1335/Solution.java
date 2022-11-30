@@ -13,8 +13,18 @@ public class Solution {
     }
 
     public static List<Board.Node> clearBoard() {
-        //напишите тут ваш код
-        return null;
+        Board board = new Board();
+        List<Board.Node> boardNodes = board.getBoardNodes();
+        for (int i = 0; i < boardNodes.size(); i++) {
+            Board.Node node = boardNodes.get(i);
+            String data = node.getData();
+            if(!data.equals("board")){
+                node.setData("board");
+            }
+
+        }
+        return boardNodes;
+
     }
 
     private static void printList(List<?> list) {
