@@ -34,16 +34,25 @@ public class PiratesWorkbench {
 
     public static void corruptDB() {
         int count = 0;
-        for (int i = 0; i < piratesDB.length && count < 2; i++) {
-            if(piratesDB[i].contains("b"));
-            piratesDB[i] = piratesDB[i].replaceAll("b","\b");
-            count++;
-        }
 
+        for (int i = 0; i < piratesDB.length && count<2;  i++) {
+
+
+            if (piratesDB[i].contains("b")) {
+                piratesDB[i] = piratesDB[i].replaceAll("b", "\b");
+                count++;
+
+
+            }
+        }
 
     }
 
     public static void addTwoNames() {
+        piratesDB = Arrays.copyOf(piratesDB, piratesDB.length + 2);
+        piratesDB[piratesDB.length-2] = "Рыжий Амиго";
+        piratesDB[piratesDB.length-1] = "Одноглазый Диего";
+
 
 
     }
