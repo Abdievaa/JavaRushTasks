@@ -14,10 +14,18 @@ public class Solution {
         if (inputArray == null || inputArray.length == 0) {
             return new Pair(null, null);
         }
+        int min = inputArray[0];
+        int max = inputArray[0];
+        for (int i = 0; i < inputArray.length; i++) {
+            if( min > inputArray[i]){
+                min = inputArray[i];
+            }
+            if(max < inputArray[i]){
+                max = inputArray[i];
+            }
+        }
 
-        // напишите тут ваш код
-
-        return new Pair(0, 0);
+        return new Pair(min, max);
     }
 
     public static class Pair {
