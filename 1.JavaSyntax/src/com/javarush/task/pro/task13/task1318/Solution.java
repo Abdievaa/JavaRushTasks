@@ -12,10 +12,14 @@ public class Solution {
     }
 
     public static Month getNextMonth(Month month) {
-        return null;
+        int ordinal = month.ordinal();
+        Month[] months = Month.values();
+        if(ordinal == 11){
+            return months[0];
+        }else{
 
-
+            return months[ordinal+1];
+        }
 
     }
-
 }
