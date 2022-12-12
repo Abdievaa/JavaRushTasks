@@ -1,6 +1,6 @@
 package com.javarush.task.pro.task13.task1318;
 
-public enum Month {
+public enum Month  {
     JANUARY,
     FEBRUARY,
     MARCH,
@@ -13,5 +13,4 @@ public enum Month {
     OCTOBER,
     NOVEMBER,
     DECEMBER
-
 }
