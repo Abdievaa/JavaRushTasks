@@ -25,6 +25,16 @@ public class StringsLinkedList {
     }
 
     public String get(int index) {
+        int count = 0;
+        Node node = first.next;
+        while (node != null) {
+            if(count == index){
+                return node.value;
+            }
+            node = node.next;
+            count++;
+
+        }
         return null;
     }
 

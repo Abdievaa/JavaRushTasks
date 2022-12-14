@@ -14,6 +14,16 @@ public class Solution {
     }
 
     public static void printDNA() {
+        List<StackTraceElement[]> dna = getDNA();
+        for (int i = 0; i < dna.size(); i++) {
+            StackTraceElement[] elements = dna.get(i);
+            String fileName = elements[1].getFileName();
+            String methodName = elements[1].getMethodName();
+            int lineNumber = elements[1].getLineNumber();
+            System.out.printf("File name: %s, Method name: %s, Line number: %d\n",
+                    fileName,methodName,lineNumber);
+
+        }
 
     }
 
