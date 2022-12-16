@@ -2,7 +2,6 @@ package com.javarush.task.task14.task1404;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Scanner;
 
 /* 
 Коты
@@ -10,12 +9,7 @@ import java.util.Scanner;
 
 public class Solution {
     public static void main(String[] args) throws Exception {
-        Scanner scanner = new Scanner(System.in);
-        String key;
-        while (!(key = scanner.nextLine()).equals("")){
-            Cat cat = CatFactory.getCatByKey(key);
-            System.out.println(cat.toString());
-        }
+        //напишите тут ваш код
     }
 
     static class CatFactory {
