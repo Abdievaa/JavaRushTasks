@@ -17,7 +17,12 @@ public class Solution {
         Scanner scanner = new Scanner(System.in);
         printSomething(scanner.nextLine());
         String result = outputStream.toString();
-        //напишите тут ваш код
+        StringBuilder builder = new StringBuilder(result);
+        String string = builder.reverse().toString();
+        outputStream.reset();
+        outputStream.write(string.getBytes());
+        System.out.println(outputStream);
+
     }
 
     public static void printSomething(String str) {
