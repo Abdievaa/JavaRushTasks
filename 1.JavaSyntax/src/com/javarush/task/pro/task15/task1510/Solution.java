@@ -15,9 +15,10 @@ public class Solution {
     public static void main(String[] args) throws IOException {
         byte[] bytes = args[0].getBytes();
         try (InputStream stream = System.in;
-             Scanner scanner = new Scanner(stream);
-             BufferedWriter bufferedWriter = Files.newBufferedWriter(Path.of(scanner.nextLine()))) {
-//            bufferedWriter.write(bytes);
+             Scanner scanner = new Scanner(stream)) {
+            Path path = Path.of(scanner.nextLine());
+            Files.write(path, bytes);
+
         } catch (IOException e) {
             System.out.println("Something went wrong : " + e);
         }
