@@ -24,5 +24,8 @@ public class Solution {
         public Hryvnia getMoney() {
             return this;
         }
+        public Object getAmount(){
+            return amount;
+        }
     }
 }
