@@ -28,7 +28,17 @@ public class Solution {
             exceptions.add(e);
         }
 
-        //напишите тут ваш код
+        exceptions.add(new RuntimeException());
+        exceptions.add(new InterruptedException());
+        exceptions.add(new IllegalAccessException());
+        exceptions.add(new ClassCastException());
+        exceptions.add(new NumberFormatException());
+        exceptions.add(new SecurityException());
+        exceptions.add(new InterruptedIOException());
+        exceptions.add(new IllegalArgumentException());
+        exceptions.add(new ArrayIndexOutOfBoundsException());
+
+
 
     }
 }
