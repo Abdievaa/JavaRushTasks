@@ -10,7 +10,24 @@ import java.io.InputStreamReader;
 
 public class Solution {
     public static void main(String[] args) throws IOException {
-        //напиште тут ваш код
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String str;
+        while (!(str = reader.readLine()).equalsIgnoreCase("exit")) {
+            try {
+                if (str.contains(".")) {
+                    print(Double.parseDouble(str));
+                } else {
+                    int number = Integer.parseInt(str);
+                    if (number > 0 && number < 128) {
+                        print((short) number);
+                    } else {
+                        print(number);
+                    }
+                }
+            }catch (Exception e ){
+                print(str);
+            }
+        }
     }
 
     public static void print(Double value) {
