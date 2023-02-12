@@ -11,6 +11,11 @@ public class Solution {
     }
 
     private static void investigateWorld() {
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
@@ -37,6 +42,8 @@ public class Solution {
         private void initAllKittens() throws InterruptedException {
             kitten1.start();
             kitten2.start();
+            kitten1.join();
+            kitten2.join();
         }
     }
 
