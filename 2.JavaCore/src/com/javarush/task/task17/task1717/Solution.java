@@ -14,9 +14,8 @@ public class Solution {
         myThread3.start();
     }
 
-    public static synchronized void printInfo(String name, int age) {
+    public synchronized static void printInfo(String name, int age) {
         for (int i = 1; i <= 5; i++) {
-            synchronized (Solution.class) {
                 System.out.print(i);
                 System.out.print(".");
                 System.out.print(" ");
@@ -31,7 +30,6 @@ public class Solution {
                 System.out.print(" ");
                 System.out.print(age);
                 System.out.println();
-            }
         }
     }
 
