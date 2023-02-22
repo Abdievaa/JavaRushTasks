@@ -20,29 +20,50 @@ public class Solution {
     }
 
     public static void main(String[] args) throws Exception {
-        SimpleDateFormat inputFormat = new SimpleDateFormat("dd/MM/yyyy",Locale.ENGLISH);
-        SimpleDateFormat outputFormat = new SimpleDateFormat("dd-MMM-yyyy",Locale.ENGLISH);
+        if(args == null || args.length < 1) {
+            return;
+        }
+
+        SimpleDateFormat inputFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
+        SimpleDateFormat outputFormat = new SimpleDateFormat("dd-MMM-yyyy", Locale.ENGLISH);
         Person person = null;
-        if(args[0].equals("-c")){
-           if (args[2].equalsIgnoreCase("м")){
+        if (args[0].equals("-c")) {
+            if (args[2].equalsIgnoreCase("м")) {
                 person = Person.createMale(args[1], inputFormat.parse(args[3]));
-           } else if (args[2].equalsIgnoreCase("ж")) {
+            } else if (args[2].equalsIgnoreCase("ж")) {
                 person = Person.createFemale(args[1], inputFormat.parse(args[3]));
-           }
-           allPeople.add(person);
-            System.out.println(allPeople.size()-1);
-        } else if (args[0].equals("-r")) {
-             person = allPeople.get(Integer.parseInt(args[1]));
-            if(person != null){
-
-
-
-
-                System.out.println(person.getName()+ " " + person.getSex() + " " + person.getBirthDate());
-
-
             }
-
+            allPeople.add(person);
+            System.out.println(allPeople.size() - 1);
+        } else if (args[0].equals("-r")) {
+            int id = Integer.parseInt(args[1]);
+            if (id >= 0 && id < allPeople.size() && (person = allPeople.get(id))!= null) {
+                String sex = null;
+                if(person.getSex().equals(Sex.MALE)){
+                    sex = "м";
+                } else if (person.getSex().equals(Sex.FEMALE)) {
+                    sex = "ж";
+                }
+                System.out.println(person.getName() + " " + sex + " " + outputFormat.format(person.getBirthDate()));
+            }
+        } else if (args[0].equals("-u")) {
+            int id = Integer.parseInt(args[1]);
+            if(id >= 0 && id < allPeople.size() && (person = allPeople.get(id)) != null) {
+                person.setName(args[2]);
+                if(args[3].equalsIgnoreCase("м")){
+                    person.setSex(Sex.MALE);
+                } else if (args[3].equalsIgnoreCase("ж")) {
+                    person.setSex(Sex.FEMALE);
+                }
+                person.setBirthDate(inputFormat.parse(args[4]));
+            }
+        } else if (args[0].equals("-d")) {
+            int id = Integer.parseInt(args[1]);
+            if(id >= 0 && id < allPeople.size() && (person = allPeople.get(id)) != null) {
+                person.setName(null);
+                person.setSex(null);
+                person.setBirthDate(null);
+            }
         }
 
     }
