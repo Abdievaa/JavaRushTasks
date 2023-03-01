@@ -4,8 +4,9 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.List;
-
+import java.util.Arrays;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /* 
 Самые частые байты
@@ -13,7 +14,7 @@ import java.util.List;
 
 public class Solution {
     public static void main(String[] args) throws Exception {
-        byte[] byteCountArray = new byte[256];
+        int[] byteCountArray = new int [256];
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
              FileInputStream inputStream = new FileInputStream(reader.readLine())) {
             while (inputStream.available() > 0) {
@@ -21,6 +22,15 @@ public class Solution {
                 byteCountArray[read]++;
             }
         }
+         IntStream.range(0, byteCountArray.length)
+                .filter(i -> byteCountArray[i] == Arrays.stream(byteCountArray).max().getAsInt())
+                 .boxed()
+                 .collect(Collectors.toList())
+                 .forEach(number -> System.out.print(number + " "));
+
+
+
+
 //        int maxCount = 0;
 //        for (int i = 0; i < byteCountArray.length; i++) {
 //            if (maxCount < byteCountArray[i]) {
@@ -37,6 +47,6 @@ public class Solution {
 //        for (int i = 0; i < list.size(); i++) {
 //            System.out.print(list.get(i) + " ");
 //        }
-        //stream;
+
     }
 }
