@@ -43,4 +43,8 @@ public class Solution {
 
     }
 
+    public String replace (String first, String second){
+        StringBuilder builder = new StringBuilder();
+        return null;
+    }
 }
