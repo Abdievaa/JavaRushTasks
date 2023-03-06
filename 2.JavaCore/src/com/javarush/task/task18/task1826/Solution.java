@@ -14,8 +14,17 @@ public class Solution {
         if(!(str.equals("-e") || str.equals("-d"))){
             return;
         }
-        try(FileInputStream inputStream = new FileInputStream(args[0]);
-        FileOutputStream outputStream = new FileOutputStream(args[1])){
+        try(FileInputStream inputStream = new FileInputStream(args[1]);
+        FileOutputStream outputStream = new FileOutputStream(args[2])){
+           if(str.equals("-e")){
+               while (inputStream.available()>0){
+                   outputStream.write(inputStream.read()+1);
+               }
+           }else {
+               while (inputStream.available()>0){
+                   outputStream.write(inputStream.read()-1);
+               }
+           }
 
         }
 
