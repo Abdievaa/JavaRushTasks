@@ -41,22 +41,24 @@ public class Solution {
 
         @Override
         public String getCompany() {
-            return null;
+            return customer.getCompanyName();
         }
 
         @Override
         public String getContactFirstName() {
-            return null;
+            String[] name = contact.getName().split(", ");
+            return name [1];
         }
 
         @Override
         public String getContactLastName() {
-            return null;
+            String[] lastName = contact.getName().split(", ");
+            return lastName[0];
         }
 
         @Override
         public String getDialString() {
-            return null;
+            return "callto://+" + contact.getPhoneNumber().replaceAll("\\D", "") ;
         }
     }
 
