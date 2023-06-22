@@ -20,7 +20,13 @@ public class Solution {
         words.add("В");
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        String file = null;
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
+            file = reader.readLine();
+
+        }
+        
 
     }
 }
